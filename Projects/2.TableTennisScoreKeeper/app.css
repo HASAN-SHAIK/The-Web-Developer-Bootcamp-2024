@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+
+hr {
+    margin: 0px;
+}
+
+h1,
+h5,
+input {
+    display: inline;
+}
+
+#winner {
+    display: block;
+}
+
+p {
+    font-size: smaller;
+}
+
+.card {
+    width: 25em;
+}
+
+.card-title {
+    margin: 0px;
+    padding: 1px;
+}
+
+.card-body {
+    padding-top: 2px;
+}
+
+select {
+    border-radius: 40%;
+    width: 2.5em;
+}
+
+.col-4 {
+    /* font-size: smaller; */
+    padding: 0%;
+}
+
+.row {
+    margin-top: 10px;
+}
+
+.btn {
+    width: 127px;
+}
