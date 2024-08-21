@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container text-center m-4 border border-success shadow-lg pb-5">
+      <h1 class="text-primary text-muted">To do List</h1>
+      <div class="container mx-auto">
+        <% for ( task of tasks) {%>
+        <section class="m-3">
+          <h5 class="d-inline"><%=task.task%></h5>
+          <form
+            class="d-inline ml-3"
+            action="/todolist/delete/<%=task.id%>?_method=DELETE"
+            method="post"
+          >
+            <button class="btn-sm btn-success">Done</button>
+          </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <button
+            type="submit"
+            class="btn-sm btn-danger"
+            data-toggle="modal"
+            data-target="#editTodo"
+            data-id ="<%=task.id%>"
+            id="idButton"
+          >
+            Edit
+          </button>
+          <div
+          class="modal fade"
+          id="editTodo"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="editTodoTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <form action="" id="form">
+                <div class="modal-body p-5">
+                  <label for="task">Edit the Task</label>
+                  <input type="text" name="newTask"/>
+                  <button type="submit" id="formButton" class="btn btn-primary">Done</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        </section>
+        <% } %>
+      </div>
+      <button
+        type="button"
+        class="btn btn-info"
+        data-toggle="modal"
+        data-target="#addTodo"
+      >
+        Add
+      </button>
+
+      <!-- Modal for Add Button -->
+      <div
+        class="modal fade"
+        id="addTodo"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addTodoTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <form action="/todolist/add" method="post">
+              <div class="modal-body p-5">
+                <label for="task">Enter the Task</label>
+                <input type="text" name="task" />
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Edit Button -->
+
+    </div>
+  </body>
+  <script src="js/edit.js"></script>
+</html>

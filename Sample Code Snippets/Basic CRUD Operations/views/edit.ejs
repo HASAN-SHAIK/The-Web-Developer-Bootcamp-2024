@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>New Comment</h2>
+    <form action="/comments/<%=id%>?_method=PATCH" method="post" >
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" value="<%=name%>"><br>
+        <label for="comment">Comment: </label><br>
+        <textarea type="text" name="comment" id="comment" rows="6" cols="27" ><%=comment%></textarea> <br>
+        <button>Update</button>
+    </form>
+    <form method="POST" action="/comments/<%= id %>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+    <a href="/comments">Back to Comments</a>
+</body>
+</html>
